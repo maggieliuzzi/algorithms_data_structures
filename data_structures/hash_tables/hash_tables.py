@@ -2,9 +2,12 @@
 Create a hash table that allows getting and setting key-value pairs
 
 Comparison to arrays:
-Faster search, insertion and deletion (O(1) vs O(n))
+Faster search, insertion and deletion (into/froms a specific position) (O(1) vs O(n))
 (Same lookup (O(1)), no push (?))
-But unordered
+But unordered -> * Correction: Python has recently made their dictionaries ordered (since 3.6 I believe)
+Dicts accessed by keys that can be of any immutable type
+Requires collision resolution/handling
+Slow key iteration
 """
 
 class HashTable():
