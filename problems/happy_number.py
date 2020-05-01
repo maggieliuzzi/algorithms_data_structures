@@ -19,6 +19,9 @@ Example:
 """
 
 def isHappyHelper(n):
+    if len(str(n)) < 2:
+        return pow(n, 2)
+    else:
         result = 0
         for i in range(0, len(str(n))):
             result += pow(int(str(n)[i]), 2)
@@ -29,13 +32,18 @@ def isHappy(n):
     :type n: int
     :rtype: bool
     """
-    result = isHappyHelper(n)
+    n = isHappyHelper(n)
 
-    if result == 1:
-        #print(result)
+    if n == 1:
         return True
-
-    isHappy(result)
+    elif n == 4:
+        return False
+    
+    return isHappy(n)
 
 
 print(isHappy(19))
+print(isHappy(28))
+print(isHappy(37))
+print(isHappy(2))
+print(isHappy(11))
