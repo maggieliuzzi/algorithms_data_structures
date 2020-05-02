@@ -41,11 +41,12 @@ class Stack:
         return self.list
     
 
+"""
 class Node:
     def __init__(self, value=None, next=None):
         self.value = value
         self.next = next
-"""
+
 class Stack:
     '''
     Implemented using Linked Lists
@@ -57,7 +58,7 @@ class Stack:
 
     def peek(self):
         "Returns top item without removing it from the stack"
-        return self.top
+        return self.top  # what about the value? if so, check that length > 0
 
     def push(self, value):
         "Returns stack with added value at the top"
