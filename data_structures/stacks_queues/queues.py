@@ -59,5 +59,3 @@ queue.dequeue()
 print(queue.peek())
 print(queue.first)
 print(queue.last)
-
-
