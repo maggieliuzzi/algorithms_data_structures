@@ -99,8 +99,3 @@ print(reverse_string_recursive("lala ! o"))
 print(reverse_string_iterative("lala ! o"))
 print(reverse_string_recursive(""))
 print(reverse_string_iterative(""))
-
-def lala():
-    lala()
-
-lala()
