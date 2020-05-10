@@ -44,6 +44,7 @@ def not_repeated(ls):
 '''
 
 def not_repeated(nums):
+    # Option 1
     if len(nums) == 0:
         return
     if len(nums) == 1:
@@ -55,6 +56,22 @@ def not_repeated(nums):
         else:
             seen[item] = 1
     return list(seen.keys())[0]
+    # Option 2 (Maths): O(n)|O(n)
+    # 2*(a+b+c)−(a+a+b+b+c)=c
+    # return 2 * sum(set(nums)) - sum(nums)
+    '''
+    # Option 3 (Bit Manipulation): O(n)|O(1)
+    # If we take XOR of zero and some bit, it will return that bit
+    # a XOR 0 = a
+    # If we take XOR of two same bits, it will return 0
+    # a XOR a = 0
+    # a XOR b XOR a = (a XOR a) XOR b = 0 XOR b = b
+    # So we can XOR all bits together to find the unique number.
+    a = 0
+    for i in nums:
+        a ^= i
+    return a
+    '''
 
 
 #ls = [2,2,1]
