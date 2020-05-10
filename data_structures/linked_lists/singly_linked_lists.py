@@ -129,6 +129,40 @@ class LinkedList:
         temp = node.next
         temp.next = node
         node.next = None
+        # head.next.next, head.next = head, None
+
+        ''' # Recursive
+        if not head or not head.next:
+            return head
+        rev = self.reverseList(head.next)
+        # temp = head.next
+        # temp.next = head
+        # head.next = None
+        head.next.next, head.next = head, None
+        return rev
+        '''
+
+        '''
+        if not head or not head.next:
+        return head
+        
+        ## Recursive
+        rev = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return rev
+        
+        ## Iterative
+        prev = None
+        curr = head
+        while curr:
+            # next = curr.next  # next Node
+            # curr.next = prev  # assign prev Node as next
+            # prev = curr  # move left
+            # curr = next  # move next Node to the back
+            curr.next, prev, curr = prev, curr, curr.next
+        return prev
+        '''
         
 
 linkedList = LinkedList(10)
