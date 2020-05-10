@@ -14,15 +14,35 @@ Output:
 e
 """
 
-def findTheDifference(s, t):
+def find_the_difference(s, t):
     """
     :type s: str
     :type t: str
     :rtype: str
     """
+    # Option 1 (bit manipulation): Time: O(n) (technically s+t), Space: O(1). More efficient if very diverse items
+    '''
     ch = 0
     for char in s + t:  # or looping separately
         ch ^= ord(char)  # ord() returns int representing Unicode char
     return chr(ch)
-    # Time: O(N), Space: O(1)
+    '''
+    # Option 2 (hash table): since all lowercase letters, max keys in hash map is 26. More readable
+    chars = {}
+    for char in s:
+        if char in chars:
+            chars[char] += 1  # or counter_s = Counter(s), from collections import Counter
+        else:
+            chars[char] = 1
+    for ch in t:
+        print(chars)
+        if ch not in chars or chars[ch] == 0:
+            return ch
+        chars[ch] -= 1
 
+
+# s = "aaabcddcbae"  # this would be for detecting missing or extra
+s = "abcddcbae"
+# t = "ddbccax"
+t = "abcddcbaae"
+print(find_the_difference(s, t))
